@@ -4,4 +4,4 @@
 3. ```docker-compose build && docker-compose up -d```
 
 ## How to use?
-1. ```docker exec -it centos#1 /bin/bash``g`
+1. ```docker exec -it centos#1 /bin/bash```
