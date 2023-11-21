@@ -1,0 +1,47 @@
+version: '3'
+services:
+  centos1:
+    hostname: centos1
+    container_name: centos1
+    deploy:
+      resources:
+        limits:
+          memory: "3g"
+    build:
+      context: .
+      dockerfile: ./centos1/Dockerfile
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./centos1/common:/common
+      - ./disk1:/sys/fs/cgroup
+  centos2:
+    hostname: centos2
+    container_name: centos2
+    deploy:
+      resources:
+        limits:
+          memory: "3g"
+    build:
+      context: .
+      dockerfile: ./centos2/Dockerfile
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./centos2/common:/common
+      - ./disk2:/sys/fs/cgroup
+  centos3:
+      hostname: centos3
+      container_name: centos3
+      deploy:
+        resources:
+          limits:
+            memory: "3g"
+      build:
+        context: .
+        dockerfile: ./centos3/Dockerfile
+      stdin_open: true
+      tty: true
+      volumes:
+        - ./centos3/common:/common
+        - ./disk3:/sys/fs/cgroup
