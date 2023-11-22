@@ -3,6 +3,8 @@ services:
   centos1:
     hostname: centos1
     container_name: centos1
+    ports:
+      - "8098:8098"
     deploy:
       resources:
         limits:
@@ -18,6 +20,8 @@ services:
   centos2:
     hostname: centos2
     container_name: centos2
+    ports:
+      - "8099:8099"
     deploy:
       resources:
         limits:
@@ -33,6 +37,8 @@ services:
   centos3:
       hostname: centos3
       container_name: centos3
+      ports:
+        - "8100:8100"
       deploy:
         resources:
           limits:
