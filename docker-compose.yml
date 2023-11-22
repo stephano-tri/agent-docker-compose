@@ -4,6 +4,7 @@ services:
     hostname: centos1
     container_name: centos1
     ports:
+      - "22:9822"
       - "8098:8098"
     deploy:
       resources:
@@ -21,6 +22,7 @@ services:
     hostname: centos2
     container_name: centos2
     ports:
+      - "22:9922"
       - "8099:8099"
     deploy:
       resources:
@@ -38,6 +40,7 @@ services:
       hostname: centos3
       container_name: centos3
       ports:
+        - "22:10022"
         - "8100:8100"
       deploy:
         resources:
