@@ -5,6 +5,13 @@ services:
       - network
     hostname: centos1
     container_name: centos1
+    healthcheck:
+      test: [ "CMD-SHELL", "ps-aux" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    restart: always
     ports:
       - "9822:22"
       - "8098:8098"
@@ -13,7 +20,7 @@ services:
         limits:
           cpus: "1"
           memory: "3g"
-    memswap_limit: "2g"
+    memswap_limit: "5g"
     build:
       context: .
       dockerfile: ./centos1/Dockerfile
@@ -27,6 +34,13 @@ services:
       - network
     hostname: centos2
     container_name: centos2
+    healthcheck:
+      test: [ "CMD-SHELL", "ps-aux" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    restart: always
     ports:
       - "9922:22"
       - "8099:8098"
@@ -35,7 +49,7 @@ services:
         limits:
           cpus: "1"
           memory: "3g"
-    memswap_limit: "2g"
+    memswap_limit: "5g"
     build:
       context: .
       dockerfile: ./centos2/Dockerfile
@@ -49,6 +63,13 @@ services:
         - network
       hostname: centos3
       container_name: centos3
+      healthcheck:
+        test: [ "CMD-SHELL", "ps-aux" ]
+        interval: 30s
+        timeout: 10s
+        retries: 3
+        start_period: 5s
+      restart: always
       ports:
         - "10022:22"
         - "8100:8098"
@@ -57,7 +78,7 @@ services:
           limits:
             cpus: "1"
             memory: "3g"
-      memswap_limit: "2g"
+      memswap_limit: "5g"
       build:
         context: .
         dockerfile: ./centos3/Dockerfile
@@ -67,6 +88,6 @@ services:
         - ./centos3/common:/common
         - ./disk3:/sys/fs/cgroup
 
-  networks:
-    network:
-      driver: bridge
+networks:
+  network:
+    driver: bridge
