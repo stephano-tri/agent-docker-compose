@@ -9,9 +9,9 @@ services:
     deploy:
       resources:
         limits:
-          cpus: 1
+          cpus: "1"
           memory: "3g"
-    memswap_limit: -1
+    memswap_limit: "2g"
     build:
       context: .
       dockerfile: ./centos1/Dockerfile
@@ -29,9 +29,9 @@ services:
     deploy:
       resources:
         limits:
-          cpus: 1
+          cpus: "1"
           memory: "3g"
-    memswap_limit: -1
+    memswap_limit: "2g"
     build:
       context: .
       dockerfile: ./centos2/Dockerfile
@@ -49,9 +49,9 @@ services:
       deploy:
         resources:
           limits:
-            cpus: 1
+            cpus: "1"
             memory: "3g"
-      memswap_limit: -1
+      memswap_limit: "2g"
       build:
         context: .
         dockerfile: ./centos3/Dockerfile
