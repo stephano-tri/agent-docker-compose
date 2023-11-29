@@ -1,4 +1,7 @@
 version: '3'
+networks:
+  network:
+    driver: bridge
 services:
   centos1:
     networks:
@@ -87,7 +90,3 @@ services:
       volumes:
         - ./centos3/common:/common
         - ./disk3:/sys/fs/cgroup
-
-networks:
-  network:
-    driver: bridge
