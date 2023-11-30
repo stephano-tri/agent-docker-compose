@@ -19,7 +19,7 @@ centos_docker="
       hostname: centos$result
       container_name: centos$result
       healthcheck:
-        test: [ "CMD-SHELL", "ps-aux" ]
+        test: [ \"CMD-SHELL\", \"ps\" ]
         interval: 30s
         timeout: 10s
         retries: 3
