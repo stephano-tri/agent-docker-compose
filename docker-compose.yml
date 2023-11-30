@@ -9,7 +9,7 @@ services:
     hostname: centos1
     container_name: centos1
     healthcheck:
-      test: [ "CMD-SHELL", "ps-aux" ]
+      test: [ "CMD-SHELL", "ps" ]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -38,7 +38,7 @@ services:
     hostname: centos2
     container_name: centos2
     healthcheck:
-      test: [ "CMD-SHELL", "ps-aux" ]
+      test: [ "CMD-SHELL", "ps" ]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -67,7 +67,7 @@ services:
       hostname: centos3
       container_name: centos3
       healthcheck:
-        test: [ "CMD-SHELL", "ps-aux" ]
+        test: [ "CMD-SHELL", "ps" ]
         interval: 30s
         timeout: 10s
         retries: 3
