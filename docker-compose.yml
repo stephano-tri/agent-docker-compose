@@ -8,6 +8,8 @@ services:
       - network
     hostname: centos1
     container_name: centos1
+    privileged: true
+    command: /sbin/init
     healthcheck:
       test: [ "CMD-SHELL", "ps" ]
       interval: 30s
@@ -37,6 +39,8 @@ services:
       - network
     hostname: centos2
     container_name: centos2
+    privileged: true
+    command: /sbin/init
     healthcheck:
       test: [ "CMD-SHELL", "ps" ]
       interval: 30s
@@ -66,6 +70,8 @@ services:
         - network
       hostname: centos3
       container_name: centos3
+      privileged: true
+      command: /sbin/init
       healthcheck:
         test: [ "CMD-SHELL", "ps" ]
         interval: 30s

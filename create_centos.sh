@@ -18,6 +18,8 @@ centos_docker="
         - network
       hostname: centos$result
       container_name: centos$result
+      privileged: true
+      command: /sbin/init
       healthcheck:
         test: [ \"CMD-SHELL\", \"ps\" ]
         interval: 30s
