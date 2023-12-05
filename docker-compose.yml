@@ -18,8 +18,8 @@ services:
       start_period: 5s
     restart: always
     ports:
-      - "9822:22"
-      - "8098:8098"
+      - "9722:22"
+      - "8092:8092"
     deploy:
       resources:
         limits:
@@ -49,8 +49,8 @@ services:
       start_period: 5s
     restart: always
     ports:
-      - "9922:22"
-      - "8099:8098"
+      - "9822:22"
+      - "8093:8093"
     deploy:
       resources:
         limits:
@@ -80,8 +80,8 @@ services:
         start_period: 5s
       restart: always
       ports:
-        - "10022:22"
-        - "8100:8098"
+        - "9922:22"
+        - "8094:8094"
       deploy:
         resources:
           limits:
