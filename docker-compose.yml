@@ -18,7 +18,7 @@ services:
       start_period: 5s
     restart: always
     ports:
-      - "9722:22"
+      - "9822:22"
       - "8092:8092"
     deploy:
       resources:
@@ -49,7 +49,7 @@ services:
       start_period: 5s
     restart: always
     ports:
-      - "9822:22"
+      - "9922:22"
       - "8093:8093"
     deploy:
       resources:
@@ -80,7 +80,7 @@ services:
         start_period: 5s
       restart: always
       ports:
-        - "9922:22"
+        - "10022:22"
         - "8094:8094"
       deploy:
         resources:

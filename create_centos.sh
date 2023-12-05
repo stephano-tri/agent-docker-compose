@@ -6,11 +6,11 @@ destination_file="docker-compose.yml"
 last_number=$(docker ps --format '{{.Names}}' | sort -V | tail -n 1 | cut -c7-)
 result=$((last_number + 1))
 
-offsetContainerPort=8095
+offsetContainerPort=8094
 offsetSSHInstancePort=10022
 
 manipulatedContainerPort=$((last_number + offsetContainerPort))
-manipulatedSSHInstancePort=$((last_number + offsetSSHInstancePort))
+manipulatedSSHInstancePort=$(((last_number * 100) + offsetSSHInstancePort))
 
 centos_docker="
   centos$result:
